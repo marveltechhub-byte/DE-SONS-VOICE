@@ -1,0 +1,16 @@
+/* Full-page animated gradient background */
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(-45deg, #ff6ec4, #7873f5, #42e695, #f7ff00);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

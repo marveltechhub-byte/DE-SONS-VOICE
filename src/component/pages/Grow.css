@@ -1,0 +1,159 @@
+.grow-container {
+  margin-top: 20px;
+  min-height: 100vh;
+  width: 100%;
+  background-image: url('../../../public/grow.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  font-family: sans-serif;
+}
+
+/* TITLE */
+.grow-container h1 {
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+/* GRID */
+.grow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(14px, 3vw, 24px);
+  align-items: stretch;
+}
+
+/* CARD */
+.grow-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.grow-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+}
+
+/* IMAGE */
+.grow-image {
+  width: 100%;
+  height: clamp(160px, 30vw, 200px);
+  object-fit: cover;
+  border-radius: 0 0 18px 18px;
+}
+
+/* BODY */
+.grow-body {
+  padding: clamp(12px, 3vw, 18px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.grow-body h4 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.grow-body p {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.4;
+}
+
+/* AUDIO */
+audio {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* DOWNLOAD BUTTON */
+.download-btn {
+  margin-top: auto;
+  text-align: center;
+  background: linear-gradient(45deg, #8b5cf6, #ec4899);
+  color: white;
+  padding: 12px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.download-btn:hover {
+  filter: brightness(1.15);
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 768px) {
+  .grow-container {
+    padding: 20px;
+  }
+
+  .grow-container h1 {
+    text-align: center;
+  }
+
+  .grow-grid {
+    gap: 16px;
+  }
+}
+
+/* ---------- SMALL PHONES ---------- */
+@media (max-width: 480px) {
+  .grow-image {
+    height: 150px;
+  }
+
+  .download-btn {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
+/* ===== SEARCH BAR ===== */
+.grow-search {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 420px;
+  margin-bottom: 30px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(14px);
+  padding: 12px 16px;
+  border-radius: 50px;
+}
+
+.grow-search svg {
+  color: #cbd5e1;
+}
+
+.grow-search input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 0.95rem;
+}
+
+.grow-search input::placeholder {
+  color: #94a3b8;
+}
+
+/* EMPTY STATE */
+.grow-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #cbd5e1;
+  margin-top: 40px;
+}

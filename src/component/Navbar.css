@@ -1,0 +1,141 @@
+/* ===== NAVBAR ===== */
+.navbar {
+  position: relative;
+  margin: 20px auto;
+  padding: 14px 32px;
+  max-width: 90%;
+  z-index: 3000; /* make sure navbar is above content but below drawer if needed */
+
+  background: linear-gradient(-45deg, #ff6ec4, #7873f5, #42e695, #f7ff00);
+  background-size: 400% 400%;
+  animation: moveGradient 10s ease infinite;
+
+  backdrop-filter: blur(10px);
+  border-radius: 120px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.85);
+}
+
+/* ===== INNER FLEX ===== */
+.nav-prop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 16px;
+}
+
+/* ===== BRAND ===== */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand img {
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* ===== DESKTOP LINKS ===== */
+.nav-right {
+  display: flex;
+  gap: 20px;
+}
+
+/* ===== LINKS STYLE ===== */
+.navbar a {
+  font-weight: 700;
+  text-decoration: none;
+
+  background: linear-gradient(45deg, #0f0c29, #302b63, #24243e, #8a2be2);
+  background-size: 400% 400%;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: moveTextGradient 8s ease infinite;
+}
+
+/* ===== MENU ICON ===== */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  color: white;
+  z-index: 4000; /* ensure icon is above navbar */
+}
+
+/* ===== DRAWER ===== */
+.drawer {
+  position: fixed;
+  top: 0;
+  left: -500px; /* start off screen */
+  width: 280px;
+  height: 100vh;
+
+  background: rgba(15, 12, 41, 0.97);
+  backdrop-filter: blur(12px);
+
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+
+  transition: left 0.35s ease;
+  z-index: 5000; /* higher than navbar */
+}
+
+.drawer.open {
+  left: 0;
+}
+
+.drawer a {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ===== CLOSE ICON ===== */
+.close-icon {
+  align-self: flex-end;
+  cursor: pointer;
+  color: white;
+  z-index: 5001; /* above drawer content */
+}
+
+/* ===== OVERLAY ===== */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 4500; /* below drawer but above content */
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes moveGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes moveTextGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .nav-right {
+    display: none; /* hide desktop links */
+  }
+
+  .menu-icon {
+    display: block; /* show hamburger */
+  }
+
+  .navbar {
+    padding: 12px 18px;
+    border-radius: 40px;
+  }
+}
