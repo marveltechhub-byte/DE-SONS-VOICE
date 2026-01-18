@@ -54,7 +54,7 @@ const Login = () => {
         />
 
         <button type="submit">Login</button>
-      <p>Don't have an account? <Link to='/signup'>SignUp</Link></p>
+      
 
       </form>
     </div>
@@ -62,4 +62,5 @@ const Login = () => {
 };
 
 export default Login;
+
 
