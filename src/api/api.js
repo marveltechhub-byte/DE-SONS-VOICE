@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api",
-  withCredentials: true, // 🔥 REQUIRED for JWT cookies
+  baseURL: "https://de-sons-voice-backend.onrender.com/api",
+  withCredentials: true, // REQUIRED if using cookies/JWT
 });
 
 export default API;
