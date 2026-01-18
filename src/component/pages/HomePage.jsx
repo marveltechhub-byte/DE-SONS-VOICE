@@ -39,7 +39,7 @@ const HomePage = () => {
         <div className="home-content">
           <h1>
             Search and download over 1,500+ <br />
-            sermons, songs, and books by your <br />
+             songs, and books by your <br />
             favorite preacher.
           </h1>
 
@@ -118,3 +118,4 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
