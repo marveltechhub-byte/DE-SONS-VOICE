@@ -12,16 +12,21 @@ const Login = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError("");
+  e.preventDefault();
+  setError("");
 
-    try {
-      await API.post("/auth/login", form);
-      navigate("/dashboard"); // ✅ logged in via cookie
-    } catch (err) {
-      setError(err.response?.data?.message || "Login failed");
-    }
-  };
+  try {
+    await API.post("/auth/login", form);
+
+    // verify cookie
+    await API.get("/auth/me");
+
+    navigate("/dashboard"); // now safe
+  } catch (err) {
+    setError(err.response?.data?.message || "Login failed");
+  }
+};
+
 
   return (
     <div className="auth-container">
@@ -57,3 +62,4 @@ const Login = () => {
 };
 
 export default Login;
+
