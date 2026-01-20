@@ -85,17 +85,24 @@
   flex-direction: column;
   width: 100%;
 }
-.messages-container {
+/* .messages-container {
   display: flex;
-  /* justify-content: center; */
-}
+  justify-content: center;
+} */
 /* ===== POSTS SECTION BELOW SEARCH ===== */
 .messages-container {
   margin-top: 35px;
   width: 100%;
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 20px;
+}
+.messages-scroll {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 /* ===== POST CARD (GLASS EFFECT) ===== */
@@ -104,6 +111,8 @@
   backdrop-filter: blur(14px);
   border-radius: 20px;
   overflow: hidden;
+  height: 150px;
+  width: 100%;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -152,6 +161,7 @@
 .music-player audio {
   width: 100%;
   height: 32px;
+  background-color: transparent;
 }
 
 .music-player a {
@@ -176,5 +186,66 @@
   }
 }
 .audio {
-  background-color: transparent ;
+  background-color: transparent;
+}
+/* ===== SEARCH RESULTS ===== */
+.search-results {
+  margin-top: 14px;
+  max-height: 320px;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(18px);
+  border-radius: 20px;
+  padding: 10px;
+}
+
+/* scrollbar */
+.search-results::-webkit-scrollbar {
+  width: 6px;
+}
+.search-results::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.25);
+  border-radius: 10px;
+}
+
+/* ===== SEARCH ITEM ===== */
+.search-item {
+  display: flex;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 14px;
+  transition: background 0.2s ease;
+}
+
+.search-item:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+.search-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ===== SEARCH BODY ===== */
+.search-item-body {
+  flex: 1;
+  text-align: left;
+}
+
+.search-item-body h4 {
+  font-size: 0.9rem;
+  color: #f8fafc;
+}
+
+.search-item-body span {
+  font-size: 0.75rem;
+  color: #cbd5e1;
+}
+
+.search-item-body audio {
+  width: 100%;
+  height: 32px;
+  margin-top: 6px;
 }
