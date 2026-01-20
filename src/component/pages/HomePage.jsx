@@ -4,6 +4,7 @@ import { Search, ArrowRight } from "lucide-react";
 import Grow from "./Grow";
 import API from "../../api/api";
 import Music from "./Music";
+import RotatingLogo from "../RotatingLogo";
 
 const HomePage = () => {
   const [posts, setPosts] = useState([]);
