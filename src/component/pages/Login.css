@@ -1,0 +1,73 @@
+/* Login.css */
+
+/* Make the whole page take full height and center content vertically */
+.auth-container {
+  display: flex;
+  justify-content: center; /* pushes form to the right */
+  align-items: center;       /* vertical centering */
+  height: 100vh;
+  padding: 0 50px;           /* space from edges */
+  background: #090040;       /* light background color */
+  box-sizing: border-box;
+}
+
+/* Form styling */
+.auth-container form {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form title */
+.auth-container h2 {
+  margin-bottom: 30px;
+  text-align: center;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+/* Input fields */
+.auth-container input {
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+
+/* Input focus */
+.auth-container input:focus {
+  border-color: #4f46e5; /* nice purple accent */
+  box-shadow: 0 0 5px rgba(79, 70, 229, 0.3);
+}
+
+/* Submit button */
+.auth-container button {
+  padding: 12px;
+  background-color: #4f46e5;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-container button:hover {
+  background-color: #4338ca;
+}
+
+/* Error message */
+.error {
+  color: #dc2626;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+}
